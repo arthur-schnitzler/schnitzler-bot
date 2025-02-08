@@ -1,0 +1,25 @@
+name: 125 years ago, schnitzler wrote
+
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * *'
+
+jobs:
+  post_on_bluesky:
+    runs-on: ubuntu-latest
+    name: Post something on Bluesky
+    env:
+      BS_HANDLE: ${{secrets.BS_HANDLE}}
+      BS_TOKEN: ${{secrets.BS_TOKEN}}
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: install packages
+        run: pip install -r requirments.txt
+      - name: post the post
+        run: python scripts/schnitzler-tagebuch.py
