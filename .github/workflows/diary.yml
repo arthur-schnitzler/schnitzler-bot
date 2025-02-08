@@ -3,7 +3,7 @@ name: 125 years ago, schnitzler wrote
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '20 9 * * *'
 
 jobs:
   post_on_bluesky:
