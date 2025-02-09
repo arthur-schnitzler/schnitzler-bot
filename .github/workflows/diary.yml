@@ -1,9 +1,9 @@
 name: 125 years ago, schnitzler wrote
 
-on: 
-  workflow_dispatch:
+on:
   schedule:
-  - cron: '29 10 * * *'
+  - cron: "40 9 * * *"
+  workflow_dispatch:
 
 jobs:
   post_on_bluesky:
