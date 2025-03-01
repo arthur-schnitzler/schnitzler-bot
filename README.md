@@ -19,4 +19,4 @@ source set_env_variables
 
 ## scripts/schnitzler-tagebuch.py
 
-posts what Schnitzler wrote 125 years ago into his diary
+posts what Schnitzler wrote 125 years ago in his diary
