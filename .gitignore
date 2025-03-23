@@ -171,3 +171,4 @@ cython_debug/
 .pypirc
 .secret
 scripts/play.py
+play.ipynb

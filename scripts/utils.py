@@ -5,6 +5,33 @@ from acdh_tei_pyutils.utils import extract_fulltext
 from config import DATA_URL
 
 
+def current_day() -> str:
+    """Returns the current date in 'MM-DD' format.
+    Uses datetime.now() to get the current date and formats it using strftime.
+    The function returns a string representation of the current month and day,
+    separated by a hyphen.
+    Returns:
+        str: Current date formatted as 'MM-DD' (e.g., '01-25' for January 25th)
+    """
+    return datetime.now().strftime("%m-%d")
+
+
+def years_ago(year: str) -> str:
+    """Calculate the number of years between a given year and the current year.
+    Args:
+        year (str): The year to calculate the difference from, as a string.
+    Returns:
+        int: The difference between the current year and the input year.
+    Example:
+        >>> years_ago('1990')
+        33  # if current year is 2023
+    """
+
+    this_year = int(datetime.now().strftime("%Y"))
+    year = int(year)
+    return this_year - year
+
+
 def get_schnitzler_date(before_how_many_years=125) -> str:
     """
     Calculate a date that is a specified number of years before the current date.
@@ -50,6 +77,3 @@ def get_text(before_how_many_years=125, max_length=250) -> str:
         return f"{text[:max_length]} ..."
     else:
         return text
-
-
-print(get_text())
